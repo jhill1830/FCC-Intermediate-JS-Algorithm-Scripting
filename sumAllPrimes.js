@@ -51,5 +51,5 @@ function sumPrimes(num) {
     console.log(sum/2);
     return sum/2;
 }
-  
+
 sumPrimes(10);
