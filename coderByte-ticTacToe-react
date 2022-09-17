@@ -51,23 +51,28 @@ const buttonStyle = {
 }
 
 function Square() {
-
+  const [xOrO, player] = useState("X")
   
-
   return (
     <button
       className="square"
+      onClick={() => player(
+        if (xOrO == "X") {
+            xOrO = "O"; 
+          } else { 
+            xOrO = "X";
+          }
+        )
+      }
       style={squareStyle}>
+      {xOrO}
     </button>
   );
 }
 
 function Board() {
-    const [playerX, setPlayer] = useState(true)
+    
 
-    const handleClick = i => {
-      return "X"
-    }
   return (
     <div style={containerStyle} className="gameBoard">
       <div id="statusArea" className="status" style={instructionsStyle}>Next player: <span>X</span></div>
@@ -75,19 +80,19 @@ function Board() {
       <button style={buttonStyle}>Reset</button>
       <div style={boardStyle}>
         <div className="board-row" style={rowStyle}>
-            <Square onClick = {handleClick}/>
-            <Square onClick = {handleClick}/>
-            <Square onClick = {handleClick}/>
+            <Square />
+            <Square />
+            <Square />
         </div>
         <div className="board-row" style={rowStyle}>
-            <Square onClick = {handleClick}/>
-            <Square onClick = {handleClick}/>
-            <Square onClick = {handleClick}/>
+            <Square />
+            <Square />
+            <Square />
         </div>
         <div className="board-row" style={rowStyle}>
-            <Square onClick = {handleClick}/>
-            <Square onClick = {handleClick}/>
-            <Square onClick = {handleClick}/>
+            <Square />
+            <Square />
+            <Square />
         </div>
       </div>
     </div>
